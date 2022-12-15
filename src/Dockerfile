@@ -4,10 +4,8 @@ RUN apk update
 
 RUN apk add --no-cache python3 py3-pip
 
-RUN pip3 install fastapi
-RUN pip3 install uvicorn
+RUN pip3 install fastapi uvicorn
 COPY app/main.py ./app/main.py
 WORKDIR /app
-ENV APP_PORT 8006
 
-CMD  uvicorn main:app --host 0.0.0.0 --port ${APP_PORT}
+CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $APP_PORT"]
