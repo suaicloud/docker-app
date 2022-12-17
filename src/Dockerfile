@@ -2,9 +2,9 @@ FROM ubuntu:latest
 
 ENV APP_PORT = 8001
 
-RUN apk update  
+RUN apt-get update  
 
-RUN apk add --no-cache python3 py3-pip
+RUN apt-get add --no-cache python3 py3-pip
 
 RUN pip3 install fastapi uvicorn
 
