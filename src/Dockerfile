@@ -1,6 +1,6 @@
 FROM ubuntu:latest
 LABEL author="Vladislav Polshchikov" version="1.0"
-ENV  APP_PORT="8021"
+ENV  APP_PORT 8021
 RUN apt-get update 
 RUN   apt-get install -y python3 
 RUN    apt-get -y install python3-pip
