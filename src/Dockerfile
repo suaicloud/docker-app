@@ -1,5 +1,14 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk update
+ENV APP_PORT=8022
 
-CMD echo "Hello world"
+RUN apt-get update
+
+RUN apt-get install -y python3 pip
+
+RUN pip install fastapi uvicorn
+
+COPY .  ./
+WORKDIR /app
+
+CMD uvicorn main:app --host 0.0.0.0 --port $APP_PORT
