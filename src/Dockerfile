@@ -8,4 +8,4 @@ RUN    pip3 install fastapi
 RUN    pip3 install "uvicorn[standard]" 
 COPY ./app /app
 WORKDIR /app
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $APP_PORT"]
+CMD ["sh", "-c", "uvicorn main:app --host 0.0.0.0 --port $APP_PORT"]
