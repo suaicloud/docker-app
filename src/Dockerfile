@@ -9,7 +9,7 @@ RUN pip3 install --no-cache --upgrade pip setuptools
 WORKDIR ./
 
 COPY ./requirements.txt /requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /requirements.txt
+RUN pip3 install --no-cache-dir --upgrade -r /requirements.txt
 COPY ./app /app
 
 CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $APP_PORT"]
