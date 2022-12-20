@@ -2,9 +2,9 @@ FROM ubuntu:latest
 
 ENV APP_PORT 8002
 
-RUN apt-get update \
-    apt-get install -y python3 pip3 \
-    pip3 install fastapi uvicorn
+RUN apt-get update 
+RUN apt-get install -y python3 pip
+RUN pip3 install fastapi uvicorn
 
 COPY . ./
 WORKDIR /app
