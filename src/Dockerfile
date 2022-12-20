@@ -9,4 +9,4 @@ RUN apt-get update \
 COPY . ./
 WORKDIR /app
 
-CMD uvicorn main:app -host 0.0.0.0 -port $APP_PORT
+CMD uvicorn main:app --host 0.0.0.0 -port $APP_PORT
