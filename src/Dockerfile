@@ -1,14 +1,12 @@
-FROM alpine:latest
+FROM ubuntu:latest
 
-RUN apk add --update --no-cache python3 && ln -sf python3 /usr/bin/python
+ENV APP_PORT 8002
 
-RUN python3 -m ensurepip
-RUN pip3 install --no-cache --upgrade pip setuptools
+RUN apt-get update \
+    apt-get install -y python3 pip3 \
+    pip3 install fastapi uvicorn
 
-WORKDIR /code
+COPY . ./
+WORKDIR /app
 
-COPY ./requirements.txt /code/requirements.txt
-RUN pip install --no-cache-dir --upgrade -r /code/requirements.txt
-COPY ./app /code/app
-
-CMD ["sh", "-c", "uvicorn app.main:app --host 0.0.0.0 --port $APP_PORT"]
+CMD uvicorn main:app -host 0.0.0.0 -port $APP_PORT
