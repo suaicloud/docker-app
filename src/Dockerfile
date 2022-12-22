@@ -1,4 +1,3 @@
-@@ -2,4 +2,10 @@
 FROM alpine:latest
 RUN apk update
 CMD echo "Hello world"
