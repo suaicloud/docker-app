@@ -1,4 +1,3 @@
-@@ -0,0 +1,7 @@
 from fastapi import FastAPI
 
 app = FastAPI()
