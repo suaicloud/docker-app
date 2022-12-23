@@ -1,5 +1,5 @@
 FROM alpine:latest
-ENV  APP_PORT 8018
+ENV  APP_PORT 8015
 RUN apk update
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install fastapi uvicorn
