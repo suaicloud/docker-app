@@ -1,5 +1,5 @@
 FROM alpine:latest
-ENV APP_ROOT 8005
+ENV APP_PORT 8005
 RUN apk update
 CMD echo "Tea goof"
 RUN apk add --no-cache python3 py3-pip
