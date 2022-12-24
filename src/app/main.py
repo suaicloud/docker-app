@@ -1,4 +1,4 @@
-from fastapi import FastApi
+from fastapi import FastAPI
 from socket import gethostname
 
 app = FastApi()
