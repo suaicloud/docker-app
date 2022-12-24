@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from socket import gethostname
 
-app = FastApi()
+app = FastAPI()
 
 id = gethostname()
 
