@@ -1,6 +1,6 @@
 FROM alpine:latest
 
-ENV APP_PORT=8015
+ENV APP_PORT = 8005
 
 RUN apk update
 
@@ -9,7 +9,7 @@ RUN apk add --no-cache python3 py3-pip
 RUN pip3 install --no-cache-dir --upgrade fastapi uvicorn
 
 
-Copy . ./
+COPY . ./
 WORKDIR /app
 
-CMD uvicorn main:app --host 0.0.0.0 --port ${APP_Port}
+CMD uvicorn main:app --host 0.0.0.0 --port ${APP_PORT}

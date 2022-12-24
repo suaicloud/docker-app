@@ -1,10 +1,10 @@
-from fastapi import FastApi
+from fastapi import FastAPI
 from socket import gethostname
 
-app = FastApi()
+app = FastAPI()
 
 id = gethostname()
 
 @app.get("/")
 def read_root():
-	return {"id": id}
+    return {"id": id}
