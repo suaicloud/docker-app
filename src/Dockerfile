@@ -4,7 +4,9 @@ ENV APP_PORT = 8003
 
 RUN apk update
 
-RUN apk add --no-cache-dir --upgrade fastapi uvicorn
+RUN apk add --no-cache python3 py3-pip
+
+RUN pip3 install --no-cache-dir --upgrade fastapi uvicorn
 
 COPY . ./
 
