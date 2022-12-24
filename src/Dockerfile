@@ -1,7 +1,7 @@
 FROM alpine:latest
-ENV APP_ROOT 8005
+ENV APP_PORT 8007
 RUN apk update
-CMD echo "Tea loh"
+CMD echo "ICE TEA LIPTON"
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install fastapi uvicorn
 COPY app/main.py ./app/main.py
