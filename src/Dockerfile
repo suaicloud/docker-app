@@ -7,7 +7,7 @@ RUN apk update
 RUN apk add --no-cache python3 py3-pip
 RUN pip3 install fastapi uvicorn
 
-COPY main.py ./app/main.py
+COPY src/main.py ./app/main.py
 
 WORKDIR /app
 
